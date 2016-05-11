@@ -1,0 +1,10 @@
+.circle_graph_container {
+  position: relative;
+  display: inline-block;
+}
+.circle_graph_container svg circle {
+  stroke-width: 20;
+  fill: none;
+  stroke-dashoffset: 0;
+  transition: all 0.5s;
+}
