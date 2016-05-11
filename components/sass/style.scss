@@ -1,12 +1,29 @@
-.circle_graph_container {
-  position: relative;
-  display: inline-block;
-  svg {
-    circle{
-      stroke-width: 20;
-      fill:none;
-      stroke-dashoffset: 0;
-      transition: all 0.5s;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-}
+
+
+//Compass Imports
+@import "compass";
+@import "compass/reset";
+@import "compass/css3/box-shadow";
+@import "compass/css3/text-shadow";
+@import 'compass/css3/filter';
+@import "compass/css3/flexbox";
+@import "compass/css3/transition";
+
+//External Libraries
+@import "susy";
+@import "breakpoint";
+
+
+//Core partials
+@import "variables";
+@import "mixins";
+@import "base";
+
+// Import Modules
+@import "modules/svg";
+@import "modules/btn";

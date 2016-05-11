@@ -1,0 +1,28 @@
+.circle_graphs {
+  @include container(100%);
+  padding-top: 200px;
+
+  .circle_graph_container {
+    width: 33%;
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+    padding-bottom: 50px;
+
+    svg {
+      display: block;
+      margin: 0 auto;
+
+      circle{
+        stroke-width: 20;
+        fill:none;
+        stroke-dashoffset: 0;
+        transition: all 0.5s;
+
+      }//circle
+
+    }//svg
+
+  }//circle container
+
+}

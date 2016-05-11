@@ -1,10 +1,235 @@
-.circle_graph_container {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+.circle_graphs {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 200px;
+}
+.circle_graphs:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.circle_graphs .circle_graph_container {
+  width: 33%;
   position: relative;
   display: inline-block;
+  margin: 0 auto;
+  padding-bottom: 50px;
 }
-.circle_graph_container svg circle {
+.circle_graphs .circle_graph_container svg {
+  display: block;
+  margin: 0 auto;
+}
+.circle_graphs .circle_graph_container svg circle {
   stroke-width: 20;
   fill: none;
   stroke-dashoffset: 0;
   transition: all 0.5s;
+}
+
+.buttons {
+  background-color: #0e83cd;
+  width: 100%;
+  height: 100vh;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.buttons:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.buttons p {
+  font-size: 4em;
+  font-family: sans-serif;
+  font-weight: 200;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  padding-top: 100px;
+}
+.buttons .button-container {
+  width: 23.72881%;
+  float: left;
+  margin-right: 1.69492%;
+  height: 300px;
+  margin: 0;
+}
+.buttons .button-container .btn {
+  display: block;
+  position: relative;
+  z-index: 0;
+  margin: 200px auto;
+  width: 200px;
+  height: 75px;
+  border: 2px solid #fff;
+  background: none;
+  color: #fff;
+  letter-spacing: 3px;
+  font-size: 1.3em;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+.buttons .button-container .btn:hover, .buttons .button-container .btn:active {
+  color: #0e83cd;
+}
+.buttons .button-container .btn-centerX::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 0%;
+  height: 103%;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  opacity: 0;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  transition: all 0.3s;
+}
+.buttons .button-container .btn-centerX:hover::after {
+  width: 100%;
+  opacity: 1;
+}
+.buttons .button-container .btn-centerY::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 0%;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  opacity: 0;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  transition: all 0.3s;
+}
+.buttons .button-container .btn-centerY:hover::after {
+  height: 103%;
+  opacity: 1;
+}
+.buttons .button-container .btn-fill-vertical:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 0%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  transition: all 0.3s;
+}
+.buttons .button-container .btn-fill-vertical:hover::after {
+  height: 100%;
+  opacity: 1;
+}
+.buttons .button-container .btn-fill-horizontal:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  transition: all 0.3s;
+}
+.buttons .button-container .btn-fill-horizontal:hover::after {
+  width: 100%;
+  opacity: 1;
+}
+.buttons .button-container .btn-horizontal-skew-small::after,
+.buttons .button-container .btn-horizontal-skew-large::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 0%;
+  height: 103%;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  opacity: 0;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  transition: all 0.3s;
+}
+.buttons .button-container .btn-horizontal-skew-small:hover::after {
+  width: 110%;
+  opacity: 1;
+  transform: skewX(40deg) translateX(-36%) translateY(-50%);
+}
+.buttons .button-container .btn-horizontal-skew-large:hover::after {
+  width: 85%;
+  opacity: 1;
+  transform: skewX(20deg) translateX(-42%) translateY(-50%);
 }
