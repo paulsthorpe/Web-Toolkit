@@ -1,0 +1,12 @@
+$susy: (
+  columns: 12,
+  gutters: 0
+);
+
+a,
+a.hover,
+a.visted,
+a.active {
+  text-decoration: none;
+  color: inherit;
+}

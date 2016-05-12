@@ -60,6 +60,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
+a,
+a.hover,
+a.visted,
+a.active {
+  text-decoration: none;
+  color: inherit;
+}
+
 .circle_graphs {
   max-width: 100%;
   margin-left: auto;
@@ -112,9 +120,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   padding-top: 100px;
 }
 .buttons .button-container {
-  width: 23.72881%;
+  width: 25%;
   float: left;
-  margin-right: 1.69492%;
   height: 300px;
   margin: 0;
 }
@@ -232,4 +239,264 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: 85%;
   opacity: 1;
   transform: skewX(20deg) translateX(-42%) translateY(-50%);
+}
+
+.inputs {
+  width: 100%;
+  height: 600px;
+  position: relative;
+  background-color: #1abc9c;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.inputs:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.inputs .input-container {
+  position: relative;
+  display: inline-block;
+  height: 150px;
+  width: 100%;
+  padding: 50px 25px;
+  width: 25%;
+  float: left;
+  /****************************
+  FLIP UP BOX INPUT
+  *****************************/
+  /****************************
+  ADD BIG BORDER INPUT
+  *****************************/
+  /*border is added to the before element, and is a transparent color.
+  layered
+  input z index 2
+  label z*/
+}
+.inputs .input-container .box-up-input {
+  width: 100%;
+  height: 3em;
+  background: none;
+  border: none;
+  position: relative;
+  z-index: 1;
+  font-size: 1.3em;
+  padding: 15px 5px 0;
+  color: #fff;
+}
+.inputs .input-container .box-up-input:focus + .box-up-label::before, .inputs .input-container .box-up-input:checked + .box-up-label::before {
+  -webkit-transform: rotate3d(1, 0, 0, 0deg);
+  transform: rotate3d(1, 0, 0, 0deg);
+}
+.inputs .input-container .box-up-input:focus + .box-up-label::after {
+  opacity: 0;
+}
+.inputs .input-container .box-up-input:focus {
+  outline: none;
+}
+.inputs .input-container .box-up-label {
+  width: 100%;
+  height: 3em;
+  display: block;
+  position: relative;
+  z-index: 0;
+}
+.inputs .input-container .box-up-label span {
+  display: inline-block;
+  padding-top: 15px;
+  font-size: 1.4em;
+  padding-left: 5px;
+  color: #0e6252;
+}
+.inputs .input-container .box-up-label::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 3em;
+  background: #0e6252;
+  -webkit-transform: perspective(1000px) rotate3d(1, 0, 0, 90deg);
+  transform: perspective(1000px) rotate3d(1, 0, 0, 90deg);
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: all 0.3s;
+}
+.inputs .input-container .box-up-label::after {
+  content: '';
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  opacity: 1;
+  top: 0;
+  display: block;
+  background-color: #0e6252;
+  transition: opacity 0.3s;
+}
+.inputs .input-container .add-border-input {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 3.9em;
+  z-index: 1;
+  background: none;
+  border: none;
+  transform: translateX(15px);
+  padding-top: 25px;
+  font-size: 1.3em;
+}
+.inputs .input-container .add-border-input:focus + .add-border-label {
+  border: 10px solid #0e6252;
+}
+.inputs .input-container .add-border-label {
+  position: absolute;
+  display: inline-block;
+  height: 5em;
+  width: 100%;
+  top: 50px;
+  z-index: 0;
+  background-color: #fff;
+  transition: all 0.3s span;
+  transition-font-size: 1.3em;
+  transition-display: block;
+  transition-transform: translateY(30px) translateX(15px);
+}
+
+.links {
+  width: 100vw;
+  height: 100vh;
+}
+.links .link-container1 {
+  background-color: #9e487f;
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.links .link-container1:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.links .link-container1 a {
+  position: relative;
+  text-align: center;
+  font-size: 1.5em;
+  color: #fff;
+  margin: 15% 100px 0;
+  display: inline-block;
+}
+.links .link-container1 .bracket-attack::before {
+  content: "[";
+  transform: rotateX(20px);
+  opacity: 0;
+  transition: all 0.2s;
+}
+.links .link-container1 .bracket-attack::after {
+  content: "]";
+  transform: translateX(-20px);
+  opacity: 0;
+  transition: all 0.2s;
+}
+.links .link-container1 .bracket-attack:hover::before {
+  opacity: 1;
+  transform: translateX(0px);
+  margin-right: 15px;
+}
+.links .link-container1 .bracket-attack:hover::after {
+  opacity: 1;
+  transform: translateX(30px);
+  margin-left: 15px;
+}
+.links .link-container1 .link-inabox {
+  background-color: #b76298;
+}
+.links .link-container1 .link-inabox::after {
+  content: 'Link In A Box';
+  height: 100%;
+  display: block;
+  border: 1px solid #000;
+  transform: rotate3d(1, 0, 0, 90deg);
+  -webkit-transform: rotate3d(1, 0, 0, 90deg);
+  transition: all 0.25s;
+}
+.links .link-container1 .surprise-bar::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #7b3863;
+  top: -20px;
+  left: 0;
+  transform: translateY(60px);
+  transition: all 0.3s;
+}
+.links .link-container1 .surprise-bar::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #7b3863;
+  bottom: -20px;
+  left: 0;
+}
+.links .link-container1 .surprise-bar:hover::before {
+  transform: translateY(0px);
+}
+.links .link-container2 {
+  background-color: #fff;
+  color: #566473;
+}
+
+.nav-toggle {
+  position: absolute;
+  height: 75px;
+  width: 75px;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  color: #000;
+}
+.nav-toggle i {
+  position: relative;
+  font-size: 3em;
+  padding: 15px 0 0 15px;
+  z-index: 15;
+}
+
+.slide-out-border-menu {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  z-index: 3;
+  border-left: 150px solid #333333;
+  border-bottom: 75px solid #333333;
+  color: #fff;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  transform: translateX(0);
+  opacity: 0.5;
+  transition: all 0.4s;
+}
+.slide-out-border-menu #main-nav {
+  position: relative;
+  left: -150px;
+  top: 75px;
+  width: 150px;
+  height: auto;
+}
+.slide-out-border-menu #main-nav li {
+  width: 100%;
+  display: block;
+  height: 50px;
+  text-align: left;
+  padding: 10px 0 0 20px;
+  font-size: 1.4em;
+  border-top: 1px solid #1a1a1a;
+}
+.slide-out-border-menu #main-nav li:nth-child(5) {
+  border-bottom: 1px solid #1a1a1a;
 }
